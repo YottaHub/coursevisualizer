@@ -77,6 +77,19 @@ fileChooser.getExtensionFilters().addAll(
 
 **文件选择**功能支持课表文件识别，当识别成功时才会出现可视化模块按钮。
 
+```java
+// do sanity check on the first row  
+if (row.getRowNum() == 0) {  
+    // sanity check  
+    if (sanityCheck(row)) {  
+        isInitialized = true;  
+        continue;  
+    } else {  
+        break;      
+}  
+}
+```
+
 ![img2](./images/Screenshot%202023-06-03%20at%2003.26.23.png)
 
 当识别失败时，后端打印错误原因并在窗口警告文件格式错误。
